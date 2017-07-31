@@ -28,7 +28,14 @@ touch course_log/translated_course_list
 
 4. Make sure the terminal's current directory is still `$MY_DIR$` (this can be checked with the command `pwd`) . Now download the Python scripts that preprocesses the daily log files:
 ```
-curl -o main.py https://raw.githubusercontent.com/AngusGLChen/DelftX-Database/master/main.py
+mkdir translation
+curl -o main.py https://raw.githubusercontent.com/chauff/edx-analysis/master/main.py
+curl -o translation/ForumMode.py https://raw.githubusercontent.com/chauff/edx-analysis/master/translation/ForumMode.py
+curl -o translation/Functions.py https://raw.githubusercontent.com/chauff/edx-analysis/master/translation/Functions.py
+curl -o translation/LearnerMode.py https://raw.githubusercontent.com/chauff/edx-analysis/master/translation/LearnerMode.py
+curl -o translation/QuizMode.py https://raw.githubusercontent.com/chauff/edx-analysis/master/translation/QuizMode.py
+curl -o translation/SurveyMode.py https://raw.githubusercontent.com/chauff/edx-analysis/master/translation/SurveyMode.py
+curl -o translation/VideoMode.py https://raw.githubusercontent.com/chauff/edx-analysis/master/translation/VideoMode.py
 ```
 
 5. The `main.py` script writes data to the database, so it needs a bit of information about how to access the DB. The current directory is still `$MY_DIR$`. The lines below create a file `config` with the necessary information:
