@@ -13,7 +13,7 @@ Should be fixed soon.
 # Step-by-step
 0. Install [Docker](https://www.docker.com/).
 
-1. Open a terminal and navigate to an empty directory (lets call it `$MY_DIR$`) in which you want to store your data. Execute the following four commands to create sub-directories and an empty file. Note that `COURSE1` can be replaced by any identifier of your choice, e.g. `FP101x`:
+1. Open a terminal and navigate to an empty directory (lets call it `$MY_DIR$`) in which you want to store your data. Execute the following five commands (copy to terminal & Enter for each command) to create sub-directories and an empty file. Note that `COURSE1` can be replaced by any identifier of your choice, e.g. `FP101x`:
 ```
 mkdir course_log
 mkdir course_log/Daily_Logs
@@ -22,11 +22,11 @@ mkdir course_log/COURSE1/metadata
 touch course_log/translated_course_list
 ```
 
-2. Populate the `course_log/Daily_Logs` sub-directory by copying the daily edx log files (`delftx-edx-events-201X-MM-DD.log.gz`) into it. Do not uncompress them.
+2. Populate the `course_log/Daily_Logs` sub-directory by copying the daily edx log files (`delftx-edx-events-201X-MM-DD.log.gz`) into it. Keep the files in the \*.gz format.
 
-3. Populate the `course_log/COURSE1/metadata` sub-directory by copying all course metadata files into it (those files contain grades, user overviews, etc.). If this data is downloaded as a single zip or tar from somewhere, it needs to be uncompressed.
+3. Populate the `course_log/COURSE1/metadata` sub-directory by copying all course metadata files into it (those files contain grades, user overviews, etc.). If this data is downloaded as a single zip or tar from surfsara, it needs to be uncompressed manually. 
 
-4. Make sure the terminal's current directory (check with `pwd`) is still `$MY_DIR$`. Now download the Python scripts that preprocesses the daily log files:
+4. Make sure the terminal's current directory is still `$MY_DIR$` (this can be checked with the command `pwd`) . Now download the Python scripts that preprocesses the daily log files:
 ```
 curl -o main.py https://raw.githubusercontent.com/AngusGLChen/DelftX-Database/master/main.py
 ```
