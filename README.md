@@ -1,3 +1,15 @@
+# What?
+
+This is a revised version of the [DelftX-Database](https://github.com/AngusGLChen/DelftX-Database) setup. While the number of steps are similar, they are now less ambiguous. `main.py` has been updated to Python 3 where necessary.
+
+A docker container is now used for the MySQL server to avoid a painful manual installation. The edx log data is loaded into the database. This requires extensive preprocessing. This is only necessary once. Once the container is running any MySQL client (command-line or GUI can access it). 
+
+# Open Issue
+
+The database resides within a Docker container, it is as of now not persistent, i.e. once the Docker container shuts down (terminal closes, machine shuts down, ...), the whole process has to be repeated. Alternatively, once the whole process is finished, an SQL dump can be made and persisted to local disk.
+Should be fixed soon.
+
+
 # Step-by-step
 0. Install [Docker](https://www.docker.com/).
 
