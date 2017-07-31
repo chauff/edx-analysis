@@ -24,9 +24,9 @@ touch course_log/translated_course_list
 
 2. Populate the `course_log/Daily_Logs` sub-directory by copying the daily edx log files (`delftx-edx-events-201X-MM-DD.log.gz`) into it. Keep the files in the \*.gz format.
 
-3. Populate the `course_log/COURSE1/metadata` sub-directory by copying all course metadata files into it (those files contain grades, user overviews, etc.). If this data is downloaded as a single zip or tar from surfsara, it needs to be uncompressed manually. 
+3. Populate the `course_log/COURSE1/metadata` sub-directory by copying all course metadata files into it (those files contain grades, user overviews, etc.). If this data is downloaded as a single archive (zip or tar) from e.g. surfsara, it needs to be uncompressed manually. 
 
-4. Make sure the terminal's current directory is still `$MY_DIR$` (this can be checked with the command `pwd`) . Now download the Python scripts that preprocesses the daily log files:
+4. Make sure the terminal's current directory is still `$MY_DIR$` (this can be checked with the command `pwd`) . Now download the Python scripts that preprocesses the daily log files with the following terminal commands:
 ```
 mkdir translation
 curl -o main.py https://raw.githubusercontent.com/chauff/edx-analysis/master/main.py
@@ -38,7 +38,7 @@ curl -o translation/SurveyMode.py https://raw.githubusercontent.com/chauff/edx-a
 curl -o translation/VideoMode.py https://raw.githubusercontent.com/chauff/edx-analysis/master/translation/VideoMode.py
 ```
 
-5. The `main.py` script writes data to the database, so it needs a bit of information about how to access the DB. The current directory is still `$MY_DIR$`. The lines below create a file `config` with the necessary information:
+5. The `main.py` script writes data to the database; it needs information about how to access the DB. The current directory is still `$MY_DIR$`. Lets create a file `config` with the necessary information via the terminal:
 ```
 touch config
 echo "[mysqld]" >> config
@@ -51,13 +51,13 @@ echo "path = $(pwd)/course_log/" >> config
 echo "remove_filtered_logs = 0" >> config
 ```
 
-6. Lets download the database schema. We are still on the terminal with current directory `$MY_DIR$` and create a new sub-directory into which we download the schema:
+6. Download the database schema. The terminal's current directory is still `$MY_DIR$`:
 ```
 mkdir docker-container
 curl -o docker-container/DelftX.sql https://raw.githubusercontent.com/AngusGLChen/DelftX-Database/master/DelftX.sql
 ```
 
-7. It is time for the database. We use Docker, so all we need to do is create a Docker file and fill in a few details. Still at `$MY_DIR$` in the terminal:
+7. It is time for the database. We use Docker, so all we need to do is create a Docker file and fill in the details. Still at `$MY_DIR$` in the terminal:
 ```
 touch docker-container/Dockerfile
 echo "FROM mysql" >> docker-container/Dockerfile
@@ -68,13 +68,13 @@ echo "ADD DelftX.sql /docker-entrypoint-initdb.d/" >> docker-container/Dockerfil
 echo 'CMD ["mysqld"]' >> docker-container/Dockerfile
 ```
 
-8. Still in `$MY_DIR$`, build the Docker image:
+8. Still in `$MY_DIR$`, build the Docker image via the terminal command:
 ```
 docker build docker-container/
 ```
 The last line of output this command produces looks something like this: `Successfully built bf3a4f120a22`. We need this hash identifier for the next step.
 
-9. Now start the database (replacing the hash identifier here with the actual one you observed):
+9. Now start the database (replace the hash identifier here with the actual one you observed):
 ```
 docker run -p 127.0.0.1:3306:3306 bf3a4f120a22
 ```
@@ -83,19 +83,19 @@ Keep this terminal open - if it is closed the container (database server) ceases
 ./mysql -h localhost -P 3306 --protocol=tcp -u root -p
 ```
 
-10. Lets try to run the preprocessing script from a **new** terminal tab/window:
+10. Finally, we have to run the preprocessing script from a **new** terminal tab/window:
 ```
 python main.py config
 ```
 If it throws an error `No module mysql`, run `pip install mysql-connector-python-rf` to install [Connector/Python](https://dev.mysql.com/doc/connector-python/en/connector-python-installation.html). 
 
-It will take quite a while to run, "All finished" indicates that all went well.
+This will take quite a while to run, "All finished" indicates that everything went well.
 
-11. Lets see if the database has any content ...
+11. To check whether the database has any content, the MySQL client can be used (via the terminal):
 ```
 ./mysql -h localhost -P 3306 --protocol=tcp -u root -p
 ```
-You will be asked for the password, it is `123456` as stated in the configuration file. The interactive `mysql` shell can be tested like this for instance:
+You will be asked for the password, it is `123456` as given in the configuration file. The interactive `mysql` shell can be tested like this for instance:
 ```
 show databases;
 use DelftX;
