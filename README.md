@@ -91,7 +91,7 @@ If it throws an error `No module mysql`, run `pip install mysql-connector-python
 
 This will take quite a while to run, "All finished" indicates that everything went well.
 
-11. To check whether the database has any content, the MySQL client can be used (via the terminal):
+11. To check whether the database has any content, the MySQL client can be used again (same as in step 9, via the terminal):
 ```
 ./mysql -h localhost -P 3306 --protocol=tcp -u root -p
 ```
@@ -103,4 +103,5 @@ show tables;
 select * from submissions;
 ```
 
+That's it. For completeness, the Docker container can be stopped nicely as follows: the command `docker ps` shows the list of containers available on the machine. Note the CONTAINER ID of each container. The command `docker stop [CONTAINER ID]` will stop the respective container. The container can be started again with the command in step 9 (it does not have to be rebuilt every time).
 
