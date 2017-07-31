@@ -14,7 +14,7 @@ Should be fixed soon.
 0. Install [Docker](https://www.docker.com/).
 
 1. Open a terminal and navigate to an empty directory (lets call it `$MY_DIR$`) in which you want to store your data. Execute the following five commands (copy to terminal & Enter for each command) to create sub-directories and an empty file. Note that `COURSE1` can be replaced by any identifier of your choice, e.g. `FP101x`:
-```shell
+```bash
 mkdir course_log
 mkdir course_log/Daily_Logs
 mkdir course_log/COURSE1/
