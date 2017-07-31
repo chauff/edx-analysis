@@ -26,7 +26,7 @@ touch course_log/translated_course_list
 
 3. Populate the `course_log/COURSE1/metadata` sub-directory by copying all course metadata files into it (those files contain grades, user overviews, etc.). If this data is downloaded as a single archive (zip or tar) from e.g. surfsara, it needs to be uncompressed manually. 
 
-4. Make sure the terminal's current directory is still `$MY_DIR$` (this can be checked with the command `pwd`) . Now download the Python scripts that preprocesses the daily log files with the following terminal commands:
+4. Make sure the terminal's current directory is still `$MY_DIR$` (this can be checked with the command `pwd`) . Download the Python scripts that preprocess the daily log files with the following terminal commands:
 ```
 mkdir translation
 curl -o main.py https://raw.githubusercontent.com/chauff/edx-analysis/master/main.py
