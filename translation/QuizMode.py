@@ -99,7 +99,7 @@ def quiz_mode(metadata_path, log_path, cursor):
                 
                 print(file)
                 
-                input_file = open(log_path + file,"r")                
+                input_file = open(log_path + file,"r", encoding="utf-8")                
                 lines = input_file.readlines()
                         
                 for line in lines:                              
