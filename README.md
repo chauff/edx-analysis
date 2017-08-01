@@ -4,6 +4,8 @@ This is a revised version of the [DelftX-Database](https://github.com/AngusGLChe
 
 **Note: use this code only for analyses conducted after the end of a MOOC; this is not suitable for incremental updates of the log files.** 
 
+** Note II: this workflow requires Python 3!**
+
 A Docker container is now used for the MySQL server to avoid a painful manual installation. The edx log data is loaded into the database. This requires extensive preprocessing. This is only necessary once. Once the container is running any MySQL client (command-line or GUI can access it). 
 
 # Open Issue
