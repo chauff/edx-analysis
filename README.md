@@ -24,7 +24,7 @@ B. Open a terminal and navigate to an empty directory (lets call it `$MY_DIR$`) 
 ```
 curl -o steps-1-9.sh https://raw.githubusercontent.com/chauff/edx-analysis/master/steps-1-9.sh
 ```
-The only change recommended to make to the contents of `steps-1-9.sh` is the course name (lines 4 and 5). By default it is `COURSE1` but that can be replaced by any reasonable identifier, e.g. `FP101x`. It is not necessary though. Make the file executable and execute in the terminal:
+The only change recommended to make to the contents of `steps-1-9.sh` is the course name (lines 4 and 5). By default it is `COURSE1` but that can be replaced by any reasonable identifier, e.g. `FP101x`. It is not necessary though. If you want several courses to process at once, add multiple `COURSE...` directories manually, at the moment only one is supported by default. Make the file executable and execute in the terminal:
 ```
 chmod 777 steps-1-9.sh
 ./steps-1-9.sh
