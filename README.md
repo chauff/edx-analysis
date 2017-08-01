@@ -26,7 +26,7 @@ chmod 777 steps-1-9.sh
 ```
 The only change recommended to make to the contents of `steps-1-9.sh` is the course name (lines 4 and 5). By default it is `COURSE1` but that can be replaced by any reasonable identifier, e.g. `FP101x`. It is not necessary though. The result of this script is a running instance of a MySQL server with the database schema that we need for our edx log data. Keep the terminal open (otherwise the MySQL server will shut down).
 
-C. Move the edx log data into the correct folders as described in steps 2 and 3 of the step-by-step long version below.
+C. Take a look at the file structure the script just created. Move the edx log data into the correct folders as described in steps 2 and 3 of the step-by-step long version below.
 
 D. Continue with step 10 of the long version (that starts the process of adding the data to the database). Follow then step 11 to test whether everything works as expected.
 
