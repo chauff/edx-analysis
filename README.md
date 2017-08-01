@@ -18,13 +18,16 @@ The step-by-step guide below explains every step to some extent. A lot of manual
 
 A. Install [Docker](https://www.docker.com/).
 
-B. Open a terminal and navigate to an empty directory (lets call it `$MY_DIR$`) in which you want to store your data. 
+B. Open a terminal and navigate to an empty directory (lets call it `$MY_DIR$`) in which you want to store your data. Download the shell script:
 ```
 curl -o steps-1-9.sh https://raw.githubusercontent.com/chauff/edx-analysis/master/steps-1-9.sh
+```
+The only change recommended to make to the contents of `steps-1-9.sh` is the course name (lines 4 and 5). By default it is `COURSE1` but that can be replaced by any reasonable identifier, e.g. `FP101x`. It is not necessary though. Make the file executable and execute in the terminal:
+```
 chmod 777 steps-1-9.sh
 ./steps-1-9.sh
 ```
-The only change recommended to make to the contents of `steps-1-9.sh` is the course name (lines 4 and 5). By default it is `COURSE1` but that can be replaced by any reasonable identifier, e.g. `FP101x`. It is not necessary though. The result of this script is a running instance of a MySQL server with the database schema that we need for our edx log data. Keep the terminal open (otherwise the MySQL server will shut down).
+The result of this script is a running instance of a MySQL server with the database schema that we need for our edx log data. Keep the terminal open (otherwise the MySQL server will shut down).
 
 C. Take a look at the file structure the script just created. Move the edx log data into the correct folders as described in steps 2 and 3 of the step-by-step long version below.
 
