@@ -28,7 +28,7 @@ def survey_mode(metadata_path, survey_path, cursor, pre_id_index, post_id_index)
     # Processing ID information
     for file in files:
         if "anon-ids.csv" in file:
-            id_file = open(survey_path + file, "r")
+            id_file = open(survey_path + file, "r", encoding="utf-8")
             id_reader = csv.reader(id_file)
             id_reader.next()
             for row in id_reader:
@@ -39,7 +39,7 @@ def survey_mode(metadata_path, survey_path, cursor, pre_id_index, post_id_index)
     # Processing Pre-survey information      
     for file in files:    
         if "pre-survey" in file:
-            pre_file = open(survey_path + file, "r")
+            pre_file = open(survey_path + file, "r", encoding="utf-8")
             pre_reader = csv.reader(pre_file)
             
             question_id_row = pre_reader.next()
