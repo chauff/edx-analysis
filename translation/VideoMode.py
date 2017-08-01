@@ -86,7 +86,7 @@ def video_interaction(metadata_path, log_path, cursor):
                 for course_learner_id in learner_video_event_logs.keys():
                     course_learner_id_set.add(course_learner_id)
                 
-                input_file = open(log_path + file,"r")
+                input_file = open(log_path + file,"r", encoding="utf-8")
                 lines = input_file.readlines()
                         
                 for line in lines:
