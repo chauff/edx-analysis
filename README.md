@@ -10,7 +10,30 @@ The database resides within a Docker container, it is as of now not persistent, 
 Should be fixed soon.
 
 
-# Step-by-step
+# Short vs. Long Version
+
+The step-by-step guide below explains every step to some extent. A lot of manual copy and pasting is required. The short version is less explanatory but also quicker to execute. Decide for yourself which one you want to use.
+
+# Step-by-step: Short Version
+
+A. Install [Docker](https://www.docker.com/).
+
+B. Open a terminal and navigate to an empty directory (lets call it `$MY_DIR$`) in which you want to store your data. 
+```
+curl -o steps-1-9.sh https://raw.githubusercontent.com/chauff/edx-analysis/master/steps-1-9.sh
+chmod 777 steps-1-9.sh
+./steps-1-9.sh
+```
+Note that `COURSE1` in this file can be replaced by any identifier of your choice, e.g. `FP101x`. It is not necessary though. The result of this script is a running instance of a MySQL server with the database schema that we need for our edx log data. Keep the terminal open (otherwise the MySQL server will shut down).
+
+C. Move the edx log data into the correct folders as described in steps 2 and 3 of the step-by-step long version below.
+
+D. Continue with step 10 of the long version (that starts the process of adding the data to the database). Follow then step 11 to test whether everything works as expected.
+
+That's it.
+
+
+# Step-by-step: Long Version
 0. Install [Docker](https://www.docker.com/).
 
 1. Open a terminal and navigate to an empty directory (lets call it `$MY_DIR$`) in which you want to store your data. Execute the following five commands (copy to terminal & Enter for each command) to create sub-directories and an empty file. Note that `COURSE1` can be replaced by any identifier of your choice, e.g. `FP101x`:
