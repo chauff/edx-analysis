@@ -103,10 +103,10 @@ def learner_mode(metadata_path, cursor):
                 certificate_status = record[7]
                 
                 register_time = ""
-                if course_learner_map.has_key(global_learner_id):
+                if global_learner_id in course_learner_map:
                     register_time = learner_enrollment_time_map[global_learner_id]              
                 
-                if course_learner_map.has_key(global_learner_id):
+                if global_learner_id in course_learner_map:
                     num_certifiedLearners += 1
                     array = [course_learner_map[global_learner_id], final_grade, enrollment_mode, certificate_status, register_time]
                     course_learner_record.append(array)
