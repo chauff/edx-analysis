@@ -14,7 +14,7 @@ Should be fixed soon.
 
 The step-by-step guide below explains every step to some extent. A lot of manual copy and pasting is required. The short version is less explanatory but also quicker to execute. Decide for yourself which one you want to use.
 
-# Step-by-step: Short Version
+## Step-by-step: Short Version
 
 A. Install [Docker](https://www.docker.com/).
 
@@ -33,7 +33,7 @@ D. Continue with step 10 of the long version (that starts the process of adding 
 That's it.
 
 
-# Step-by-step: Long Version
+## Step-by-step: Long Version
 0. Install [Docker](https://www.docker.com/).
 
 1. Open a terminal and navigate to an empty directory (lets call it `$MY_DIR$`) in which you want to store your data. Execute the following five commands (copy to terminal & Enter for each command) to create sub-directories and an empty file. Note that `COURSE1` can be replaced by any identifier of your choice, e.g. `FP101x`:
