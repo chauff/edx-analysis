@@ -91,7 +91,7 @@ def learner_mode(metadata_path, cursor):
     num_certifiedLearners = 0    
     for file in files:       
         if "certificates_generatedcertificate" in file:
-            input_file = open(metadata_path + file, "r")
+            input_file = open(metadata_path + file, "r", encoding="utf-8")
             input_file.readline()
             lines = input_file.readlines()
             
@@ -120,7 +120,7 @@ def learner_mode(metadata_path, cursor):
     # Processing auth_userprofile data                    
     for file in files:       
         if "auth_userprofile" in file:
-            input_file = open(metadata_path + file, "r")
+            input_file = open(metadata_path + file, "r", encoding = "utf-8")
             input_file.readline()
             lines = input_file.readlines()
                         
