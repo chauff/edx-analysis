@@ -24,7 +24,7 @@ curl -o steps-1-9.sh https://raw.githubusercontent.com/chauff/edx-analysis/maste
 chmod 777 steps-1-9.sh
 ./steps-1-9.sh
 ```
-Note that `COURSE1` in this file can be replaced by any identifier of your choice, e.g. `FP101x`. It is not necessary though. The result of this script is a running instance of a MySQL server with the database schema that we need for our edx log data. Keep the terminal open (otherwise the MySQL server will shut down).
+The only change recommended to make to `steps-1-9.sh` is the course name. By default it is `COURSE1` but that can be replaced by any reasonable identifier, e.g. `FP101x`. It is not necessary though. The result of this script is a running instance of a MySQL server with the database schema that we need for our edx log data. Keep the terminal open (otherwise the MySQL server will shut down).
 
 C. Move the edx log data into the correct folders as described in steps 2 and 3 of the step-by-step long version below.
 
