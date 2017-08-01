@@ -35,7 +35,7 @@ def forum_interaction(metadata_path, cursor):
     files = os.listdir(metadata_path)     
     for file in files:
         if ".mongo" in file:
-            forum_file = open(metadata_path + file,"r")   
+            forum_file = open(metadata_path + file,"r", encoding="utf-8")   
             for line in forum_file:
                 jsonObject = json.loads(line)
                    
