@@ -15,7 +15,7 @@ def ExtractCourseInformation(metadata_path):
     # Processing course_structure data                
     for file in files:             
         if "course_structure" in file:           
-            course_structure_file = open(metadata_path + file, "r")
+            course_structure_file = open(metadata_path + file, "r", encoding="utf-8")
             
             child_parent_map = {}
             element_time_map = {}
