@@ -77,7 +77,7 @@ def learner_mode(metadata_path, cursor):
     # Processing auth_user data  
     for file in files:               
         if "auth_user-" in file:
-            input_file = open(metadata_path + file, "r")
+            input_file = open(metadata_path + file, "r", encoding="utf-8")
             input_file.readline()
             lines = input_file.readlines()
             for line in lines:
