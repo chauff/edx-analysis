@@ -4,7 +4,7 @@ This is a revised version of the [DelftX-Database](https://github.com/AngusGLChe
 
 **Note: use this code only for analyses conducted after the end of a MOOC; this is not suitable for incremental updates of the log files.** 
 
-** Note II: this workflow requires Python 3!**
+**Note II: this workflow requires Python 3!**
 
 A Docker container is now used for the MySQL server to avoid a painful manual installation. The edx log data is loaded into the database. This requires extensive preprocessing. This is only necessary once. Once the container is running any MySQL client (command-line or GUI can access it). 
 
@@ -108,10 +108,11 @@ The last line of output this command produces looks something like this: `Succes
 ```
 docker run -p 127.0.0.1:3306:3306 bf3a4f120a22
 ```
-Keep this terminal open - if it is closed the container (database server) ceases to exist. That's it, the MySQL server is now running. We can test this quickly by connecting the MySQL client from our local machine to the container, like so (here `mysql` is the MySQL client binary) from a **new** terminal tab/window:
+Keep this terminal open - if it is closed the container (database server) ceases to exist. That's it, the MySQL server is now running. We can test this quickly by connecting the MySQL client from our local machine to the container, like so (here `mysql` is the MySQL command line client binary) from a **new** terminal tab/window:
 ```
 ./mysql -h localhost -P 3306 --protocol=tcp -u root -p
 ```
+Besides the command line client, MySQL's Workbench or another GUI-based application can of course also be used. 
 
 10. Finally, we have to run the preprocessing script from a **new** terminal tab/window:
 ```
