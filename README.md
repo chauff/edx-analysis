@@ -2,7 +2,7 @@
 
 This is a revised version of the [DelftX-Database](https://github.com/AngusGLChen/DelftX-Database) setup. While the number of steps are similar, they are now less ambiguous. `main.py` has been updated to Python 3 where necessary.
 
-**Note: use this code only for analyses conducted after the end of a MOOC; this is not suitable for incremental updates of the log files.**
+**Note: use this code only for analyses conducted after the end of a MOOC; this is not suitable for incremental updates of the log files.** (if you need incremental updates, use [this version of the DelftX-Database](https://github.com/AngusGLChen/DelftX-Daily-Database))
 
 A Docker container is now used for the MySQL server to avoid a painful manual installation. The edx log data is loaded into the database. This requires extensive preprocessing. This is only necessary once. Once the container is running any MySQL client (command-line or GUI can access it). 
 
