@@ -37,7 +37,8 @@ The result of this script is a running instance of a MySQL server with the datab
 
 C. Take a look at the file structure the script just created. Move the edx log data into the correct folders as described in steps 2 and 3 of the step-by-step long version below.
 
-D. Continue with step 10 of the long version (that starts the process of adding the data to the database). Follow then step 11 to test whether everything works as expected.
+D. Continue with step 10 of the long version (that starts the process of adding the data to the database). Follow then step 11 to test whether everything works as expected. Instead of step 11 (command line interface), you can also open a graphical UI for MySQL such as SequelPro:
+[Database parameters](sequelpro.png)
 
 That's it.
 
