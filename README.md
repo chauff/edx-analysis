@@ -2,6 +2,8 @@
 
 This is a revised version of the [DelftX-Database](https://github.com/AngusGLChen/DelftX-Database) setup. While the number of steps are similar, they are now less ambiguous. `main.py` has been updated to Python 3 where necessary.
 
+This setup takes you from a bunch of edX log files (and metadata files) to a fully working database that has the edX raw data nicely parsed and queryable.
+
 **Note: use this code only for analyses conducted after the end of a MOOC; this is not suitable for incremental updates of the log files.** 
 
 **Note II: this workflow requires Python 3!**
@@ -26,7 +28,7 @@ B. Open a terminal and navigate to an empty directory (lets call it `$MY_DIR$`) 
 ```
 curl -o steps-1-9.sh https://raw.githubusercontent.com/chauff/edx-analysis/master/steps-1-9.sh
 ```
-The only change recommended to make to the contents of `steps-1-9.sh` is the course name (lines 4 and 5). By default it is `COURSE1` but that can be replaced by any reasonable identifier, e.g. `FP101x`. It is not necessary though. If you want several courses to process at once, add additional `mkdir course_log/COURSEX` and `mkdir course_log/COURSEX/metadata` entries. If you only want to process data for a single MOOC no changes are necessary. Make the file executable and execute in the terminal:
+The only change recommended to make to the contents of `steps-1-9.sh` is the course name (lines 4 and 5). By default it is `COURSE1` but that can be replaced by any reasonable identifier, e.g. `FP101x`. It is not necessary though. If you want several courses to process at once, add additional `mkdir course_log/COURSEX` and `mkdir course_log/COURSEX/metadata` entries to this file. If you only want to process data for a single MOOC no changes are necessary. Make the file executable and execute in the terminal:
 ```
 chmod 777 steps-1-9.sh
 ./steps-1-9.sh
