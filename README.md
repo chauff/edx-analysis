@@ -111,7 +111,7 @@ The last line of output this command produces looks something like this: `Succes
 ```
 docker run -p 127.0.0.1:3306:3306 bf3a4f120a22
 ```
-Keep this terminal open - if it is closed the container (database server) ceases to exist. That's it, the MySQL server is now running. We can test this quickly by connecting the MySQL client from our local machine to the container, like so (here `mysql` is the MySQL command line client binary) from a **new** terminal tab/window:
+**Keep this terminal open**. If it is closed, the container (database server) ceases to exist. That's it, the MySQL server is now running. We can test this quickly by connecting the MySQL client from our **local machine** to the container, like so (here `mysql` is the MySQL command line client binary and we assume the binary is in the current directory - adapt the path to your own `mysql` installation) from a **new** terminal tab/window:
 ```
 ./mysql -h localhost -P 3306 --protocol=tcp -u root -p
 ```
